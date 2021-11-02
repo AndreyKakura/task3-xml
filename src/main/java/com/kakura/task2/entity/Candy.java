@@ -1,12 +1,14 @@
 package com.kakura.task2.entity;
 
-public abstract class Candy {
-    protected long CandiesId;
-    protected String name;
-    protected int energy;
-    protected String production;
-    protected int proteins;
-    protected int fats;
-    protected int carbohydrates;
-    
+import java.time.LocalDate;
+
+public class Candy {
+    private long id;
+    private String name;
+    private LocalDate expirationDate;
+    private int energy;
+    private String type;
+    private Ingredients ingredients;
+    private Value value;
+    private String production;
 }

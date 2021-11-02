@@ -18,8 +18,8 @@
             <element name="value" type="tns:Value"/>
             <element name="production" type="string"/>
         </sequence>
-        <attribute name="id" use="required"/>
-        <attribute name="name" use="required"/>
+        <attribute name="id" use="required" type="long"/>
+        <attribute name="name" use="required" type="string"/>
         <attribute name="expiration-date" use="optional"/>
     </complexType>
     <complexType name="Value">
