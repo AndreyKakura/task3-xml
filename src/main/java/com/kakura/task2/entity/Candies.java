@@ -5,6 +5,8 @@ public abstract class Candies {
     protected String name;
     protected int energy;
     protected String production;
-
-
+    protected int proteins;
+    protected int fats;
+    protected int carbohydrates;
+    
 }
