@@ -2,13 +2,13 @@ package com.kakura.task2.entity;
 
 import java.time.LocalDate;
 
-public class Candy {
-    private long id;
-    private String name;
-    private LocalDate expirationDate;
-    private int energy;
-    private String type;
-    private Ingredients ingredients;
-    private Value value;
-    private String production;
+public abstract class Candy {
+    protected long id;
+    protected String name;
+    protected LocalDate expirationDate;
+    protected int energy;
+    protected String type;
+    protected Ingredients ingredients;
+    protected Value value;
+    protected String production;
 }

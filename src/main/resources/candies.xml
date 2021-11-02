@@ -18,5 +18,6 @@
             <carbohydrates>52</carbohydrates>
         </value>
         <production>Red October</production>
+        <filling>true</filling>
     </candy>
 </candies>
