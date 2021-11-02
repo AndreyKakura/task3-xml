@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/candies"
+        xmlns:tns="http://www.example.com/candies"
+        elementFormDefault="qualified">
+    <element name="candies">
+        <complexType>
+            <sequence>
+                <element name="candy" type="tns:Candy" minOccurs="1" maxOccurs="100"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Candy">
+        <sequence>
+            <element name="energy" type="int"/>
+            <element name="type" type="string"/>
+            <element name="ingredients" type="tns:Ingredients"/>
+            <element name="value" type="tns:Value"/>
+            <element name="production" type="string"/>
+        </sequence>
+        <attribute name="id" use="required"/>
+        <attribute name="name" use="required"/>
+        <attribute name="expiration-date" use="optional"/>
+    </complexType>
+    <complexType name="Value">
+        <sequence>
+            <element name="proteins" type="int"/>
+            <element name="fats" type="int"/>
+            <element name="carbohydrates" type="int"/>
+        </sequence>
+    </complexType>
+    <complexType name="Ingredient">
+        <attribute name="name" use="required"/>
+        <attribute name="quantity" use="optional"/>
+    </complexType>
+    <complexType name="Ingredients">
+        <sequence>
+            <element name="ingredient" type="tns:Ingredient" minOccurs="1" maxOccurs="100"/>
+        </sequence>
+    </complexType>
+</schema>

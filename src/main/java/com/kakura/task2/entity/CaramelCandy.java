@@ -1,4 +1,4 @@
 package com.kakura.task2.entity;
 
-public class CaramelCandy extends Candies{
+public class CaramelCandy extends Candy {
 }
