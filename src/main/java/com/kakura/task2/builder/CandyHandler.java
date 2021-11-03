@@ -13,14 +13,14 @@ public class CandyHandler extends DefaultHandler {
     private Set<Candy> candies;
     private Candy current;
     private CandyXmlTag currentXmlTag;
-    private EnumSet<CandyXmlTag> ingredientsWithText;
-    private EnumSet<CandyXmlTag> valueWithText;
+    private EnumSet<CandyXmlTag> withText;
     private static final String ELEMENT_CANDY = "candy";
 
     public CandyHandler() {
         candies = new HashSet<Candy>();
-        ingredientsWithText = EnumSet.range(CandyXmlTag.WATER, CandyXmlTag.VANILLIN);
-        valueWithText = EnumSet.range(CandyXmlTag.PROTEINS, CandyXmlTag.CARBOHYDRATES);
+        withText = EnumSet.of(CandyXmlTag.WATER, CandyXmlTag.SUGAR, CandyXmlTag.FRUCTOSE, CandyXmlTag.COCOA,
+                CandyXmlTag.VANILLIN, CandyXmlTag.PROTEINS, CandyXmlTag.FATS, CandyXmlTag.CARBOHYDRATES,
+                CandyXmlTag.PRODUCTION);
     }
 
     public Set<Candy> getCandies() {
@@ -35,22 +35,23 @@ public class CandyHandler extends DefaultHandler {
             current.setExpirationDate(YearMonth.parse(attrs.getValue(2))); //warning
         } else {
             CandyXmlTag temp = CandyXmlTag.valueOf(qName.toUpperCase().replace('-', '_'));
-            if (ingredientsWithText.contains(temp) || valueWithText.contains(temp)) {
+            if (withText.contains(temp)) {
                 currentXmlTag = temp;
             }
         }
     }
 
     public void endElement(String uri, String localName, String qName) {
-        if(ELEMENT_CANDY.equals(qName)) {
+        if (ELEMENT_CANDY.equals(qName)) {
             candies.add(current);
         }
     }
 
     public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length).strip();
-        if(currentXmlTag!=null) {
-            switch(currentXmlTag) {
+        if (currentXmlTag != null) {
+            System.out.println(currentXmlTag + " " + data);
+            switch (currentXmlTag) {
                 case ENERGY -> current.setEnergy(Integer.parseInt(data));
                 case TYPE -> current.setType(data);
                 case WATER -> current.getIngredients().setWater(Integer.parseInt(data));
