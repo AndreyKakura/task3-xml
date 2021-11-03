@@ -2,7 +2,7 @@
 <candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.example.com/candies"
          xsi:schemaLocation="http://www.example.com/candies candies.xsd">
-    <candy id="101" name="Alenka" expiration-date="2022-07">
+    <chocolate-candy id="101" name="Alenka" expiration-date="2022-07">
         <energy>100</energy>
         <type>chocolate</type>
         <ingredients>
@@ -19,5 +19,5 @@
         </value>
         <production>Red October</production>
         <filling>true</filling>
-    </candy>
+    </chocolate-candy>
 </candies>
