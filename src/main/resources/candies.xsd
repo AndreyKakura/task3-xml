@@ -30,13 +30,13 @@
             <element name="carbohydrates" type="int"/>
         </sequence>
     </complexType>
-    <complexType name="Ingredient">
-        <attribute name="name" use="required"/>
-        <attribute name="quantity" use="optional" default="1"/>
-    </complexType>
     <complexType name="Ingredients">
         <sequence>
-            <element name="ingredient" type="tns:Ingredient" minOccurs="1" maxOccurs="100"/>
+            <element name="water" type="int"/>
+            <element name="sugar" type="int"/>
+            <element name="fructose" type="int"/>
+            <element name="cocoa" type="int"/>
+            <element name="vanillin" type="int"/>
         </sequence>
     </complexType>
 </schema>
