@@ -9,7 +9,7 @@ public class Main {
     private static final Logger logger = LogManager.getLogger();
 
     public static void main(String[] args) throws CandyException {
-        String type = "dom";
+        String type = "stax";
         AbstractCandiesBuilder builder = CandyBuilderFactory.createCandyBuilder(type);
         builder.buildSetCandies("src/main/resources/candies.xml");
         System.out.println(builder.getCandies());

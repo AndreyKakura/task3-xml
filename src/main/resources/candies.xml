@@ -18,9 +18,279 @@
             <carbohydrates>52</carbohydrates>
         </value>
         <production>Red October</production>
+        <filling>false</filling>
+    </chocolate-candy>
+    <chocolate-candy id="102" name="South Night">
+        <energy>380</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>6</water>
+            <sugar>11</sugar>
+            <fructose>4</fructose>
+            <cocoa>21</cocoa>
+            <vanillin>2</vanillin>
+        </ingredients>
+        <value>
+            <proteins>2</proteins>
+            <fats>9</fats>
+            <carbohydrates>75</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <filling>false</filling>
+    </chocolate-candy>
+    <chocolate-candy id="103" name="Northern Lights">
+        <energy>370</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>6</water>
+            <sugar>21</sugar>
+            <fructose>4</fructose>
+            <cocoa>21</cocoa>
+            <vanillin>2</vanillin>
+        </ingredients>
+        <value>
+            <proteins>4</proteins>
+            <fats>11</fats>
+            <carbohydrates>65</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <filling>false</filling>
+    </chocolate-candy>
+    <chocolate-candy id="104" name="Carian's Bistro Gift Box">
+        <energy>420</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>6</water>
+            <sugar>21</sugar>
+            <fructose>4</fructose>
+            <cocoa>22</cocoa>
+            <vanillin>2</vanillin>
+        </ingredients>
+        <value>
+            <proteins>5</proteins>
+            <fats>11</fats>
+            <carbohydrates>68</carbohydrates>
+        </value>
+        <production>Carian's Bistro</production>
         <filling>true</filling>
     </chocolate-candy>
-    <caramel-candy id="102" name="Barberry" expiration-date="2023-08">
+    <chocolate-candy id="105" name="Minchanka">
+        <energy>320</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>5</water>
+            <sugar>22</sugar>
+            <fructose>4</fructose>
+            <cocoa>22</cocoa>
+            <vanillin>2</vanillin>
+        </ingredients>
+        <value>
+            <proteins>3</proteins>
+            <fats>8</fats>
+            <carbohydrates>72</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <filling>true</filling>
+    </chocolate-candy>
+    <chocolate-candy id="106" name="Belovezhskaya pushcha">
+        <energy>352</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>5</water>
+            <sugar>18</sugar>
+            <fructose>4</fructose>
+            <cocoa>25</cocoa>
+            <vanillin>3</vanillin>
+        </ingredients>
+        <value>
+            <proteins>3</proteins>
+            <fats>10</fats>
+            <carbohydrates>72</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <filling>true</filling>
+    </chocolate-candy>
+    <chocolate-candy id="107" name="Stolichnyye">
+        <energy>405</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>5</water>
+            <sugar>17</sugar>
+            <fructose>4</fructose>
+            <cocoa>24</cocoa>
+            <vanillin>3</vanillin>
+        </ingredients>
+        <value>
+            <proteins>3</proteins>
+            <fats>11</fats>
+            <carbohydrates>72</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <filling>true</filling>
+    </chocolate-candy>
+    <chocolate-candy id="108" name="Grand Toffy">
+        <energy>366</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>4</water>
+            <sugar>22</sugar>
+            <fructose>5</fructose>
+            <cocoa>23</cocoa>
+            <vanillin>2</vanillin>
+        </ingredients>
+        <value>
+            <proteins>3</proteins>
+            <fats>14</fats>
+            <carbohydrates>71</carbohydrates>
+        </value>
+        <production>Roshen</production>
+        <filling>true</filling>
+    </chocolate-candy>
+    <caramel-candy id="109" name="Teatralnaya" expiration-date="2022-11">
+        <energy>390</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>5</water>
+            <sugar>8</sugar>
+            <fructose>20</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>15</vanillin>
+        </ingredients>
+        <value>
+            <proteins>1</proteins>
+            <fats>1</fats>
+            <carbohydrates>96</carbohydrates>
+        </value>
+        <production>Slodych</production>
+        <caramel-type>lollipop</caramel-type>
+    </caramel-candy>
+    <caramel-candy id="110" name="Vzletnaya" expiration-date="2022-11">
+        <energy>380</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>4</water>
+            <sugar>6</sugar>
+            <fructose>22</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>15</vanillin>
+        </ingredients>
+        <value>
+            <proteins>1</proteins>
+            <fats>1</fats>
+            <carbohydrates>96</carbohydrates>
+        </value>
+        <production>Slodych</production>
+        <caramel-type>lollipop</caramel-type>
+    </caramel-candy>
+    <caramel-candy id="111" name="Fruktovaya" expiration-date="2023-08">
+        <energy>385</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>4</water>
+            <sugar>6</sugar>
+            <fructose>35</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>11</vanillin>
+        </ingredients>
+        <value>
+            <proteins>1</proteins>
+            <fats>1</fats>
+            <carbohydrates>96</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <caramel-type>fruit</caramel-type>
+    </caramel-candy>
+    <caramel-candy id="112" name="Lucky Chucky" expiration-date="2023-04">
+        <energy>500</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>5</water>
+            <sugar>22</sugar>
+            <fructose>20</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>9</vanillin>
+        </ingredients>
+        <value>
+            <proteins>11</proteins>
+            <fats>34</fats>
+            <carbohydrates>44</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <caramel-type>fruit</caramel-type>
+    </caramel-candy>
+    <caramel-candy id="113" name="Moskva" expiration-date="2023-05">
+        <energy>400</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>4</water>
+            <sugar>6</sugar>
+            <fructose>25</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>11</vanillin>
+        </ingredients>
+        <value>
+            <proteins>4</proteins>
+            <fats>6</fats>
+            <carbohydrates>80</carbohydrates>
+        </value>
+        <production>Red October</production>
+        <caramel-type>salted</caramel-type>
+    </caramel-candy>
+    <caramel-candy id="114" name="Duchess" expiration-date="2023-11">
+        <energy>373</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>3</water>
+            <sugar>6</sugar>
+            <fructose>26</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>11</vanillin>
+        </ingredients>
+        <value>
+            <proteins>1</proteins>
+            <fats>1</fats>
+            <carbohydrates>93</carbohydrates>
+        </value>
+        <production>Rot Front</production>
+        <caramel-type>salted</caramel-type>
+    </caramel-candy>
+    <caramel-candy id="114" name="Duchess" expiration-date="2023-11">
+        <energy>373</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>3</water>
+            <sugar>6</sugar>
+            <fructose>26</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>11</vanillin>
+        </ingredients>
+        <value>
+            <proteins>1</proteins>
+            <fats>1</fats>
+            <carbohydrates>93</carbohydrates>
+        </value>
+        <production>Rot Front</production>
+        <caramel-type>salted</caramel-type>
+    </caramel-candy>
+    <chocolate-candy id="115" name="Merci">
+        <energy>563</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>5</water>
+            <sugar>24</sugar>
+            <fructose>4</fructose>
+            <cocoa>26</cocoa>
+            <vanillin>4</vanillin>
+        </ingredients>
+        <value>
+            <proteins>8</proteins>
+            <fats>36</fats>
+            <carbohydrates>50</carbohydrates>
+        </value>
+        <production>August Storck</production>
+        <filling>true</filling>
+    </chocolate-candy>
+    <caramel-candy id="116" name="Barberry" expiration-date="2023-08">
         <energy>100</energy>
         <type>caramel</type>
         <ingredients>

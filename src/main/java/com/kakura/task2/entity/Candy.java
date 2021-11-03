@@ -128,7 +128,9 @@ public abstract class Candy {
         StringBuilder sb = new StringBuilder();
         sb.append("id=").append(id);
         sb.append(", name=").append(name);
-        sb.append(", expirationDate=").append(expirationDate);
+        if (expirationDate != null) {
+            sb.append(", expirationDate=").append(expirationDate);
+        }
         sb.append(", energy=").append(energy);
         sb.append(", type=").append(type);
         sb.append(", ingredients=").append(ingredients);

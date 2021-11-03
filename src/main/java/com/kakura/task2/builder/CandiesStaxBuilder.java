@@ -69,8 +69,11 @@ public class CandiesStaxBuilder extends AbstractCandiesBuilder {
 
         candy.setId(Long.parseLong(reader.getAttributeValue(null, CandyXmlTag.ID.getValue())));
         candy.setName(reader.getAttributeValue(null, CandyXmlTag.NAME.getValue()));
-        candy.setExpirationDate(YearMonth
-                .parse(reader.getAttributeValue(null, CandyXmlTag.EXPIRATION_DATE.getValue())));
+
+        String content = reader.getAttributeValue(null, CandyXmlTag.EXPIRATION_DATE.getValue());
+        if (content != null) {
+            candy.setExpirationDate(YearMonth.parse(content));
+        }
 
         String name;
         while (reader.hasNext()) {
