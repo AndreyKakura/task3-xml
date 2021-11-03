@@ -1,6 +1,9 @@
 package com.kakura.task2.builder;
 
 import com.kakura.task2.entity.Candy;
+import com.kakura.task2.entity.CaramelCandy;
+import com.kakura.task2.entity.CaramelType;
+import com.kakura.task2.entity.ChocolateCandy;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -14,7 +17,8 @@ public class CandyHandler extends DefaultHandler {
     private Candy current;
     private CandyXmlTag currentXmlTag;
     private EnumSet<CandyXmlTag> withText;
-    private static final String ELEMENT_CANDY = "candy";
+    private static final String ELEMENT_CHOCOLATE_CANDY = "chocolate-candy";
+    private static final String ELEMENT_CARAMEL_CANDY = "caramel-candy";
 
     public CandyHandler() {
         candies = new HashSet<Candy>();
@@ -22,7 +26,7 @@ public class CandyHandler extends DefaultHandler {
                 CandyXmlTag.WATER, CandyXmlTag.SUGAR, CandyXmlTag.FRUCTOSE,
                 CandyXmlTag.COCOA, CandyXmlTag.VANILLIN,
                 CandyXmlTag.PROTEINS, CandyXmlTag.FATS, CandyXmlTag.CARBOHYDRATES,
-                CandyXmlTag.PRODUCTION);
+                CandyXmlTag.PRODUCTION, CandyXmlTag.FILLING, CandyXmlTag.CARAMEL_TYPE);
     }
 
     public Set<Candy> getCandies() {
@@ -30,11 +34,17 @@ public class CandyHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-        if (ELEMENT_CANDY.equals(qName)) {
-            current = new Candy();
+        if (ELEMENT_CHOCOLATE_CANDY.equals(qName) || ELEMENT_CARAMEL_CANDY.equals(qName)) {
+            if (ELEMENT_CHOCOLATE_CANDY.equals(qName)) {
+                current = new ChocolateCandy();
+            } else {
+                current = new CaramelCandy();
+            }
             current.setId(Long.parseLong(attrs.getValue(0)));
             current.setName(attrs.getValue(1));
-            current.setExpirationDate(YearMonth.parse(attrs.getValue(2))); //warning
+            if (attrs.getLength() == 3) {
+                current.setExpirationDate(YearMonth.parse(attrs.getValue(2))); //warning
+            }
         } else {
             CandyXmlTag temp = CandyXmlTag.valueOf(qName.toUpperCase().replace('-', '_'));
             if (withText.contains(temp)) {
@@ -44,7 +54,7 @@ public class CandyHandler extends DefaultHandler {
     }
 
     public void endElement(String uri, String localName, String qName) {
-        if (ELEMENT_CANDY.equals(qName)) {
+        if (ELEMENT_CHOCOLATE_CANDY.equals(qName) || ELEMENT_CARAMEL_CANDY.equals(qName)) {
             candies.add(current);
         }
     }
@@ -64,7 +74,16 @@ public class CandyHandler extends DefaultHandler {
                 case FATS -> current.getValue().setFats(Integer.parseInt(data));
                 case CARBOHYDRATES -> current.getValue().setCarbohydrates(Integer.parseInt(data));
                 case PRODUCTION -> current.setProduction(data);
-                //case FILLING
+                case FILLING -> {
+                    ChocolateCandy temp = (ChocolateCandy) current;
+                    temp.setFilling(Boolean.parseBoolean(data));
+                    current = temp;
+                }
+                case CARAMEL_TYPE -> {
+                    CaramelCandy temp = (CaramelCandy) current;
+                    temp.setCaramelType(CaramelType.valueOf(data.toUpperCase()));
+                    current = temp;
+                }
                 default -> throw new EnumConstantNotPresentException(
                         currentXmlTag.getDeclaringClass(), currentXmlTag.name());
             }

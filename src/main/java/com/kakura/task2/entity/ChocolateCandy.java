@@ -43,16 +43,11 @@ public class ChocolateCandy extends Candy {
 
     @Override
     public String toString() {
-        return "ChocolateCandy{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", expirationDate=" + expirationDate +
-                ", energy=" + energy +
-                ", type='" + type + '\'' +
-                ", ingredients=" + ingredients +
-                ", value=" + value +
-                ", production='" + production + '\'' +
-                ", filling=" + filling +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("ChocolateCandy{");
+        sb.append(super.toString());
+        sb.append(", filling=").append(filling);
+        sb.append("}");
+        return sb.toString();
     }
 }

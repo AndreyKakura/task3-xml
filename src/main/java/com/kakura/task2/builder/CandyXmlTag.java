@@ -3,6 +3,8 @@ package com.kakura.task2.builder;
 public enum CandyXmlTag {
     CANDIES("candies"),
     CANDY("candy"),
+    CHOCOLATE_CANDY("chocolate-candy"),
+    CARAMEL_CANDY("caramel-candy"),
     ID("id"),
     NAME("name"),
     EXPIRATION_DATE("expiration-date"),
@@ -19,7 +21,8 @@ public enum CandyXmlTag {
     FATS("fats"),
     CARBOHYDRATES("carbohydrates"),
     PRODUCTION("production"),
-    FILLING("filling");
+    FILLING("filling"),
+    CARAMEL_TYPE("caramel-type");
 
     private String value;
     CandyXmlTag(String value) {

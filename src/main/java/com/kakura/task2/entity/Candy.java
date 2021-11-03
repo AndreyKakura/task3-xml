@@ -2,7 +2,7 @@ package com.kakura.task2.entity;
 
 import java.time.YearMonth;
 
-public class Candy {
+public abstract class Candy {
     protected long id;
     protected String name;
     protected YearMonth expirationDate;
@@ -125,16 +125,17 @@ public class Candy {
 
     @Override
     public String toString() {
-        return "Candy{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", expirationDate=" + expirationDate +
-                ", energy=" + energy +
-                ", type='" + type + '\'' +
-                ", ingredients=" + ingredients +
-                ", value=" + value +
-                ", production='" + production + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", expirationDate=").append(expirationDate);
+        sb.append(", energy=").append(energy);
+        sb.append(", type=").append(type);
+        sb.append(", ingredients=").append(ingredients);
+        sb.append(", value=").append(value);
+        sb.append(", production='").append(production);
+        sb.append("'");
+        return sb.toString();
     }
 
 }

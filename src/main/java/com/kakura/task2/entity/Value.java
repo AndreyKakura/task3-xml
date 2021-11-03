@@ -41,10 +41,12 @@ public class Value {
 
     @Override
     public String toString() {
-        return "Value{" +
-                "proteins=" + proteins +
-                ", fats=" + fats +
-                ", carbohydrates=" + carbohydrates +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Value{");
+        sb.append("proteins=").append(proteins);
+        sb.append(", fats=").append(fats);
+        sb.append(", carbohydrates=").append(carbohydrates);
+        sb.append("}");
+        return sb.toString();
     }
 }

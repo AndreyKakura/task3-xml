@@ -61,12 +61,14 @@ public class Ingredients {
 
     @Override
     public String toString() {
-        return "Ingredients{" +
-                "water=" + water +
-                ", sugar=" + sugar +
-                ", fructose=" + fructose +
-                ", cocoa=" + cocoa +
-                ", vanillin=" + vanillin +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Ingredients{");
+        sb.append("water=").append(water);
+        sb.append(", sugar=").append(sugar);
+        sb.append(", fructose=").append(fructose);
+        sb.append(", cocoa=").append(cocoa);
+        sb.append(", vanillin=").append(vanillin);
+        sb.append('}');
+        return sb.toString();
     }
 }
