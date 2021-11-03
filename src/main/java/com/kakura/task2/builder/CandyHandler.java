@@ -45,6 +45,7 @@ public class CandyHandler extends DefaultHandler {
             if (attrs.getLength() == 3) {
                 current.setExpirationDate(YearMonth.parse(attrs.getValue(2))); //warning
             }
+
         } else {
             CandyXmlTag temp = CandyXmlTag.valueOf(qName.toUpperCase().replace('-', '_'));
             if (withText.contains(temp)) {

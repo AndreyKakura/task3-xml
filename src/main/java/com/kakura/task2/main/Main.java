@@ -1,5 +1,6 @@
 package com.kakura.task2.main;
 
+import com.kakura.task2.builder.CandiesDomBuilder;
 import com.kakura.task2.builder.CandiesSaxBuilder;
 import com.kakura.task2.builder.CandyXmlTag;
 import com.kakura.task2.exception.CandyException;
@@ -10,8 +11,8 @@ public class Main {
     private static final Logger logger = LogManager.getLogger();
 
     public static void main(String[] args) throws CandyException {
-        CandiesSaxBuilder saxBuilder = new CandiesSaxBuilder();
-        saxBuilder.buildSetCandies("src/main/resources/candies.xml");
-        System.out.println(saxBuilder.getCandies());
+        CandiesDomBuilder domBuilder = new CandiesDomBuilder();
+        domBuilder.buildSetCandies("src/main/resources/candies.xml");
+        System.out.println(domBuilder.getCandies());
     }
 }

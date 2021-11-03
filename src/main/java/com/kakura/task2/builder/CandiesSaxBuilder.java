@@ -13,28 +13,26 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.Set;
 
-public class CandiesSaxBuilder {
+public class CandiesSaxBuilder extends AbstractCandiesBuilder{
     private static final Logger logger = LogManager.getLogger();
-    private Set<Candy> candies;
     private CandyHandler handler = new CandyHandler();
     private XMLReader reader;
 
     public CandiesSaxBuilder() {
+        super();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = factory.newSAXParser();
             reader = saxParser.getXMLReader();
-        } catch (ParserConfigurationException | SAXException e) {
-            logger.error(e);
+        } catch (ParserConfigurationException e) {
+            logger.error("ParserConfigurationException", e);
+        } catch(SAXException e) {
+            logger.error("SAXException",e);
         }
         reader.setErrorHandler(new CandyErrorHandler());
         reader.setContentHandler(handler);
     }
-
-    public Set<Candy> getCandies() {
-        return candies;
-    }
-
+    @Override
     public void buildSetCandies(String fileName) throws CandyException {
         try {
             reader.parse(fileName);
