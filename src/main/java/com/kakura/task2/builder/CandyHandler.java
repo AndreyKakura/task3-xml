@@ -18,8 +18,10 @@ public class CandyHandler extends DefaultHandler {
 
     public CandyHandler() {
         candies = new HashSet<Candy>();
-        withText = EnumSet.of(CandyXmlTag.WATER, CandyXmlTag.SUGAR, CandyXmlTag.FRUCTOSE, CandyXmlTag.COCOA,
-                CandyXmlTag.VANILLIN, CandyXmlTag.PROTEINS, CandyXmlTag.FATS, CandyXmlTag.CARBOHYDRATES,
+        withText = EnumSet.of(CandyXmlTag.ENERGY, CandyXmlTag.TYPE,
+                CandyXmlTag.WATER, CandyXmlTag.SUGAR, CandyXmlTag.FRUCTOSE,
+                CandyXmlTag.COCOA, CandyXmlTag.VANILLIN,
+                CandyXmlTag.PROTEINS, CandyXmlTag.FATS, CandyXmlTag.CARBOHYDRATES,
                 CandyXmlTag.PRODUCTION);
     }
 
@@ -50,7 +52,6 @@ public class CandyHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length).strip();
         if (currentXmlTag != null) {
-            System.out.println(currentXmlTag + " " + data);
             switch (currentXmlTag) {
                 case ENERGY -> current.setEnergy(Integer.parseInt(data));
                 case TYPE -> current.setType(data);
@@ -64,8 +65,11 @@ public class CandyHandler extends DefaultHandler {
                 case CARBOHYDRATES -> current.getValue().setCarbohydrates(Integer.parseInt(data));
                 case PRODUCTION -> current.setProduction(data);
                 //case FILLING
+                default -> throw new EnumConstantNotPresentException(
+                        currentXmlTag.getDeclaringClass(), currentXmlTag.name());
             }
         }
+        currentXmlTag = null;
     }
 
 
