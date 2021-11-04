@@ -40,6 +40,26 @@ public class Value {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Value value = (Value) o;
+
+        if (proteins != value.proteins) return false;
+        if (fats != value.fats) return false;
+        return carbohydrates == value.carbohydrates;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = proteins;
+        result = 31 * result + fats;
+        result = 31 * result + carbohydrates;
+        return result;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Value{");

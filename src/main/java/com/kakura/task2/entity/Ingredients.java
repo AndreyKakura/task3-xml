@@ -60,6 +60,30 @@ public class Ingredients {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Ingredients that = (Ingredients) o;
+
+        if (water != that.water) return false;
+        if (sugar != that.sugar) return false;
+        if (fructose != that.fructose) return false;
+        if (cocoa != that.cocoa) return false;
+        return vanillin == that.vanillin;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = water;
+        result = 31 * result + sugar;
+        result = 31 * result + fructose;
+        result = 31 * result + cocoa;
+        result = 31 * result + vanillin;
+        return result;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Ingredients{");

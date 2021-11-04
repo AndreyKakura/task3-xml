@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.YearMonth;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,7 +44,7 @@ class CandiesStaxBuilderTest {
         staxBuilder.buildSetCandies("src/test/resources/data/candies.xml");
         Set<Candy> actual = staxBuilder.getCandies();
 
-        assertEquals(expected.toString(), actual.toString());
+        assertEquals(expected, actual);
     }
 
     @Test

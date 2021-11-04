@@ -44,7 +44,7 @@ class CandiesDomBuilderTest {
         domBuilder.buildSetCandies("src/test/resources/data/candies.xml");
         Set<Candy> actual = domBuilder.getCandies();
 
-        assertEquals(expected.toString(), actual.toString());
+        assertEquals(expected, actual);
     }
 
     @Test
