@@ -15,20 +15,6 @@ public class Main {
 
     public static void main(String[] args) throws CandyException {
 
-        ChocolateCandy chocolateCandy1 = new ChocolateCandy(101, "South Night",
-                YearMonth.parse("2023-11"), 380, "chocolate",
-                new Ingredients(6, 11, 4, 21, 2),
-                new Value(2, 9, 75), "Kommunarka", false);
-
-        ChocolateCandy chocolateCandy2 = new ChocolateCandy(101, "South Night",
-                YearMonth.parse("2023-11"), 380, "chocolate",
-                new Ingredients(6, 11, 4, 21, 2),
-                new Value(2, 9, 75), "Kommunarka", false);
-
-        System.out.println(chocolateCandy1.hashCode());
-        System.out.println(chocolateCandy2.hashCode());
-        System.out.println(chocolateCandy1.equals(chocolateCandy2));
-
         String type = "stax";
         //String type = "sax";
         //String type = "dom";
