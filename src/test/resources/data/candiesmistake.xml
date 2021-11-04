@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.com/candies"
+         xsi:schemaLocation="http://www.example.com/candies candies.xsd">
+    <chocolate-candy id="101" name="South Night" expiration-date="2023-11">
+        <energy>380</energy>
+        <type>chocolate</type>
+        <ingredients>
+            <water>6</water
+            <sugar>11</sugar>
+            <fructose>4</fructose>
+            <cocoa>21</cocoa>
+            <vanillin>2</vanillin>
+        </ingredients>
+        <value>
+            <proteins>2</proteins>
+            <fats>9</fats>
+            <carbohydrates>75</carbohydrates>
+        </value>
+        <production>Kommunarka</production>
+        <filling>false</filling>
+    </chocolate-candy>
+    <caramel-candy id="102" name="Duchess" expiration-date="2022-10">
+        <energy>373</energy>
+        <type>caramel</type>
+        <ingredients>
+            <water>3</water>
+            <sugar>6</sugar>
+            <fructose>26</fructose>
+            <cocoa>0</cocoa>
+            <vanillin>11</vanillin>
+        </ingredients>
+        <value>
+            <proteins>1</proteins>
+            <fats>1</fats>
+            <carbohydrates>93</carbohydrates>
+        </value>
+        <production>Rot Front</production>
+        <caramel-type>salted</caramel-type>
+    </caramel-candy>
+</candies>

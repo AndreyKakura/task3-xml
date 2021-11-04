@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/candies"
+        xmlns:tns="http://www.example.com/candies"
+        elementFormDefault="qualified">
+    <element name="candy" type="tns:Candy" abstract="true"/>
+    <element name="chocolate-candy" type="tns:ChocolateCandy" substitutionGroup="tns:candy"/>
+    <element name="caramel-candy" type="tns:CaramelCandy" substitutionGroup="tns:candy"/>
+    <element name="candies">
+        <complexType>
+            <sequence>
+                <element ref="tns:candy" minOccurs="1" maxOccurs="100"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Candy">
+        <sequence>
+            <element name="energy" type="int"/>
+            <element name="type" type="string"/>
+            <element name="ingredients" type="tns:Ingredients"/>
+            <element name="value" type="tns:Value"/>
+            <element name="production" type="string"/>
+        </sequence>
+        <attribute name="id" use="required" type="long"/>
+        <attribute name="name" use="required" type="string"/>
+        <attribute name="expiration-date" use="optional"/>
+    </complexType>
+    <complexType name="ChocolateCandy">
+        <complexContent>
+            <extension base="tns:Candy">
+                <sequence>
+                    <element name="filling" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="CaramelCandy">
+        <complexContent>
+            <extension base="tns:Candy">
+                <sequence>
+                    <element name="caramel-type" type="tns:CaramelType"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="Value">
+        <sequence>
+            <element name="proteins" type="int"/>
+            <element name="fats" type="int"/>
+            <element name="carbohydrates" type="int"/>
+        </sequence>
+    </complexType>
+    <complexType name="Ingredients">
+        <sequence>
+            <element name="water" type="int"/>
+            <element name="sugar" type="int"/>
+            <element name="fructose" type="int"/>
+            <element name="cocoa" type="int"/>
+            <element name="vanillin" type="int"/>
+        </sequence>
+    </complexType>
+    <simpleType name="CaramelType">
+        <restriction base="string">
+            <enumeration value="salted"/>
+            <enumeration value="lollipop"/>
+            <enumeration value="fruit"/>
+        </restriction>
+    </simpleType>
+</schema>
