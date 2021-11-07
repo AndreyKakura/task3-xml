@@ -25,6 +25,7 @@ public enum CandyXmlTag {
     CARAMEL_TYPE("caramel-type");
 
     private String value;
+
     CandyXmlTag(String value) {
         this.value = value;
     }

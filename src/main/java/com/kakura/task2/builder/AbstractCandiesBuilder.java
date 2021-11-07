@@ -6,7 +6,7 @@ import com.kakura.task2.exception.CandyException;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract  class AbstractCandiesBuilder {
+public abstract class AbstractCandiesBuilder {
     protected Set<Candy> candies;
 
     public AbstractCandiesBuilder() {

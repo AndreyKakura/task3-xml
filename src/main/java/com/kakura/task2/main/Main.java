@@ -15,11 +15,11 @@ public class Main {
 
     public static void main(String[] args) throws CandyException {
 
-        String type = "stax";
-        //String type = "sax";
+        String type = "sax";
+        //String type = "stax";
         //String type = "dom";
         AbstractCandiesBuilder builder = CandyBuilderFactory.createCandyBuilder(type);
-        builder.buildSetCandies("src/main/resources/candies.xml");
+        builder.buildSetCandies("src/main/resources/data/candies.xml");
         System.out.println(builder.getCandies());
     }
 }
